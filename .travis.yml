@@ -1,0 +1,9 @@
+language: node
+services:
+  - docker
+install:
+  - docker build -t mapic/xenial .
+  - docker run -d --name xenial mapic/xenial htop
+script:
+  - docker ps | grep -q xenial
+  
